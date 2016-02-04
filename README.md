@@ -42,8 +42,6 @@ This code is provided on an "AS-IS” basis without warranty of any kind, either
 
 ##### [Behat 3 Documentation](http://docs.behat.org/en/v3.0/)
 
-##### [CucumberJS Documentation](https://github.com/cucumber/cucumber-js)
-
 ##### [Composer Documentation](https://getcomposer.org/doc/)
 
 ##### [Stack Overflow](http://stackoverflow.com/)
