@@ -116,7 +116,7 @@ class FeatureContext implements SnippetAcceptingContext
             )
         );
         $length = strlen($payload);
-        $fh = fopen('php://memory', 'rw');
+        $fh = fopen('php://temp', 'rw+');
         fwrite($fh, $payload);
         rewind($fh);
         curl_setopt($ch, CURLOPT_PUT, true);
