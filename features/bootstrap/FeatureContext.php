@@ -27,7 +27,7 @@ class FeatureContext implements SnippetAcceptingContext
         $feature_name = $scope->getFeature()->gettitle();
 
         $host = sprintf(
-            'http://%s:%s@ondemand.saucelabs.com/wd/hub',
+            'https://%s:%s@ondemand.saucelabs.com:443/wd/hub',
             $username,
             $access_key
         );
@@ -63,9 +63,9 @@ class FeatureContext implements SnippetAcceptingContext
     public function iShouldBeOnANewPage()
     {
         $title = $this->driver->getTitle();
-         PHPUnit_Framework_Assert::assertEquals($title, "I am another page title - Sauce Labs"); 
+        PHPUnit_Framework_Assert::assertEquals($title, "I am another page title - Sauce Labs");
     }
-    
+
 
 
     /** @AfterScenario */
@@ -85,7 +85,7 @@ class FeatureContext implements SnippetAcceptingContext
         $this->modifySauceJob(
             sprintf(
                 '{"passed": %s}',
-                $result           
+                $result
             ),
             $jobId
         );
@@ -93,7 +93,7 @@ class FeatureContext implements SnippetAcceptingContext
         print "SauceOnDemandSessionID=".$jobId." job-name=".$feature_name." - ".$scenario_name;
     }
 
-    public function getSessionId($event) 
+    public function getSessionId($event)
     {
         $scenario = $event instanceof ScenarioEvent ? $event->getScenario() : $event->getOutline();
         $context = $event->getContext();
